@@ -1,14 +1,14 @@
 import cv2
 import numpy as np
-original = cv2.imread('Tela2.JPG')
-img = cv2.resize(original,(400,400))
+original = cv2.imread('holes.jpg')
+img = cv2.resize(original,(300,300))
 cv2.imshow('Original',img)
 gris = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 blurimg = cv2.GaussianBlur(gris,(5,5),0)
 cv2.imshow('Suavizado',blurimg)
 
-contour = cv2.Canny(blurimg,200,225)
+contour = cv2.Canny(blurimg,400,475)
 
 cv2.imshow('Contornos',contour)
 
